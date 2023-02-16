@@ -84,8 +84,12 @@ func main() {
 
 		for index, column := range table {
 			offset := ((rowHeight + rowHeight) * index) + 40
+
+			canvas.Group()
 			canvas.Rect(1, offset, width-2, 40, "fill: #D9D9D9; stroke: #8A8A8A; stroke-width: 2px;")
 			canvas.Text(10, offset+25, column.Name, "font-weight: bold; font-size: 16px;"+DefaultTextStyle)
+			canvas.Gend()
+
 			canvas.Text(10, offset+rowHeight+25, column.Type, "font-size: 14px;"+DefaultTextStyle)
 		}
 	}
